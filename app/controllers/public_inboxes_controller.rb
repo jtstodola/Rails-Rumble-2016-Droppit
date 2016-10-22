@@ -1,0 +1,2 @@
+class PublicInboxesController < ApplicationController
+end
