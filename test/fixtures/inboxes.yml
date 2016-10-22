@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  remote_folder: MyString
+  service: MyString
+
+two:
+  name: MyString
+  remote_folder: MyString
+  service: MyString

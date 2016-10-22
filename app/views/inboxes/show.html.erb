@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @inbox.name %>
+</p>
+
+<p>
+  <strong>Remote folder:</strong>
+  <%= @inbox.remote_folder %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @inbox.service %>
+</p>
+
+<%= link_to 'Edit', edit_inbox_path(@inbox) %> |
+<%= link_to 'Back', inboxes_path %>
