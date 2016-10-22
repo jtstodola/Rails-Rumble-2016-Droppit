@@ -34,4 +34,11 @@ ActiveRecord::Schema.define(version: 20161022011936) do
   add_index "models", ["email"], name: "index_models_on_email", unique: true, using: :btree
   add_index "models", ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true, using: :btree
 
+  create_table "inboxes", force: :cascade do |t|
+    t.string   "name"
+    t.string   "remote_folder"
+    t.string   "service"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 end
