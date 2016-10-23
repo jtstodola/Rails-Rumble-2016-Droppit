@@ -5,21 +5,35 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+	<%= link_to 'Home', root_path %>
+
 </head>
 
 <body>
 	<header>
 		<h1>Droppit</h1>
 	</header>
-  <p class="notice"><%= notice %></p>
- 	<p class="alert"><%= alert %></p>
 
 	<main>
+		<p class="notice"><%= notice %></p>
+ 		<p class="alert"><%= alert %></p>
 		<%= yield %>
 	</main>
 
+  <% if user_signed_in?%>
+  	<p>Current User: <%= current_user.email %></p>
+  	<%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+  <% else %>
+  	<p>Current User: <a href="/users/auth/dropbox_oauth2">Login</a> </p>
+  <% end %>
+
+	<% if user_signed_in? %>
+		<p>View your <a href="<%= :inboxes %>">Inboxes</a></p>
+	<% end %>
+
 	<footer>
-		&copy;2016 <a href="https://twitter.com/bphogan">@bphogan</a>, <a href="https://twitter.com/JessicaTStodola">@JessicaTStodola</a>, & <a href="https://twitter.com/Alex_Henry21">@Alex_Henry21</a>
+		&copy;2016 <a href="https://twitter.com/bphogan">@bphogan</a>, <a href="https://twitter.com/JessicaTStodola">@JessicaTStodola</a>, &amp; <a href="https://twitter.com/Alex_Henry21">@Alex_Henry21</a>
 	</footer>
 
 </body>
