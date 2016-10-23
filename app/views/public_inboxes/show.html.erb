@@ -8,7 +8,7 @@
   <div class="box__uploading">Uploading&hellip;</div>
   <div class="box__success">Done!</div>
   <div class="box__error">Error! <span></span>.</div>
-  
+
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 </form>
 
@@ -24,7 +24,7 @@
 
   if (isAdvancedUpload) {
     $form.addClass('has-advanced-upload');
-  
+
     $form.on('drag dragstart dragend dragover dragenter dragleave drop', function(e) {
       e.preventDefault();
       e.stopPropagation();
@@ -48,12 +48,12 @@
     $input.on('change', function(e) { // when drag & drop is NOT supported
       $form.trigger('submit');
     });
-    
-    
-    
-    
+
+
+
+
   }
-  
+
   $form.on('submit', function(e) {
     if ($form.hasClass('is-uploading')) return false;
 
@@ -88,10 +88,10 @@
           // Log the error, show an alert, whatever works for you
         }
       });
-      
+
     } else {
       // ajax for legacy browsers
-      
+
       var iframeName  = 'uploadiframe' + new Date().getTime();
       $iframe   = $('<iframe name="' + iframeName + '" style="display: none;"></iframe>');
 
@@ -110,6 +110,6 @@
       });
     }
   });
-  
-  
+
+
 </script>
