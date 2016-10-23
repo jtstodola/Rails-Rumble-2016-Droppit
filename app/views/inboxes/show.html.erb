@@ -1,16 +1,22 @@
 <p>
-  <strong>Name:</strong>
+  <strong>Inbox Name:</strong>
   <%= @inbox.name %>
 </p>
 
 <p>
-  <strong>Remote folder:</strong>
+  <strong>Remote Folder Name:</strong>
   <%= @inbox.remote_folder %>
 </p>
 
 <p>
   <strong>Service:</strong>
-  <%= @inbox.service %>
+  <%= @inbox.service.capitalize %>
+</p>
+
+<p>
+  <strong>Public URL:</strong>
+  <% path = public_inbox_url(@inbox.slug) %>
+  <%= link_to path, path %>
 </p>
 
 <%= link_to 'Edit', edit_inbox_path(@inbox) %> |

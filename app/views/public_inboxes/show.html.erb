@@ -1,7 +1,12 @@
+<p>
+  Add files to <strong><%= @inbox.name %></strong> Inbox for <strong><%= @inbox.service.capitalize %></strong>.
+</p>
+
+
 <form class="box" method="post" action="/u/<%=@inbox.slug %>" enctype="multipart/form-data">
   <div class="box__input">
     <input class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
-    <%= fa_icon "upload 4x", 'aria-hidden': true %>
+    <%= fa_icon "upload 4x", 'aria-hidden': true, class: "box__dragndrop"%>
     <label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
     <div id="fileList"></div>
     <button class="box__button" type="submit">Upload</button>
