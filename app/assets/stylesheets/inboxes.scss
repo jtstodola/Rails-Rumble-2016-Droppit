@@ -5,6 +5,8 @@
  *= require font-awesome
  */
 
+$our_blue: #b5deff;
+
 p {
   margin: 20px;
   text-align: center;
@@ -27,7 +29,7 @@ p {
 
 .box.has-advanced-upload {
   padding-top: 30px;
-  background-color: #b5deff;
+  background-color: our_blue;
   border-bottom-right-radius: 15px;
   border-top-left-radius: 15px;
   outline: 2px dashed rgba(0, 0, 0, 0.6);
@@ -99,3 +101,36 @@ p {
     -webkit-transform: translateY( -50% );
     transform: translateY( -50% );
 }
+
+table {
+  border-spacing: 0;
+  
+  thead {
+    
+    tr {
+      th {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+        padding: 5px 20px;
+        margin: 0;
+      }
+      
+    }
+  }
+
+  tbody {
+    tr {
+      
+      td {
+        border: none;
+        margin: 0;
+        padding: 10px;
+      }
+      
+    }
+  }
+}
+
+tbody > tr:hover {
+  background-color: $our_blue;
+}
+
