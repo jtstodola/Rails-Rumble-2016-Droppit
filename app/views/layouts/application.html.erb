@@ -6,12 +6,20 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-	<%= link_to 'Home', root_path %>
-
 </head>
 
 <body>
 	<header>
+		<%= link_to 'Home', root_path %>
+  
+  	<% if user_signed_in?%>
+  			<p class="cur_user">Current User: <%= current_user.email %></p>
+  			<p class="cur_user"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></p>
+  		</select>
+  	<% else %>
+  		<p class="cur_user">Current User: <a href="/users/auth/dropbox_oauth2">Login</a></p>
+  	<% end %>
+
 		<h1>Droppit</h1>
 	</header>
 
@@ -21,15 +29,8 @@
 		<%= yield %>
 	</main>
 
-  <% if user_signed_in?%>
-  	<p>Current User: <%= current_user.email %></p>
-  	<%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-  <% else %>
-  	<p>Current User: <a href="/users/auth/dropbox_oauth2">Login</a> </p>
-  <% end %>
-
 	<% if user_signed_in? %>
-		<p>View your <a href="<%= :inboxes %>">Inboxes</a></p>
+		<p>View your <%= link_to "inboxes", inboxes_path %>.</p>
 	<% end %>
 
 	<footer>
