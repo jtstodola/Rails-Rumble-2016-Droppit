@@ -124,13 +124,32 @@ table {
         border: none;
         margin: 0;
         padding: 10px;
-      }
-      
+      } 
     }
   }
 }
 
 tbody > tr:hover {
   background-color: $our_blue;
+}
+
+div#inbox-show {
+  padding: 15px;
+  font-size: 16px;
+  
+  tr:hover {
+    background-color: inherit;
+  }
+  
+  th {
+    text-align: left;
+    font-weight: 200;
+    padding: 5px 10px;
+  }
+  
+  th:first-child {
+    text-align: right;
+    font-weight: 600;
+  }
 }
 
