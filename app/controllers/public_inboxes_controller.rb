@@ -14,15 +14,18 @@ class PublicInboxesController < ApplicationController
     # and the file.
 
     client = DropboxClient.new token
-    destination = File.join(inbox.remote_folder, params[:file].original_filename)
-    begin
-      client.put_file(destination, params[:file].read)
-      message = "File uploaded to Dropbox!"
-    rescue
-      message = "Unable to update"
-    end
+    messages = []
+    params[:files].each do |file|
+      destination = File.join(inbox.remote_folder, file.original_filename)
+      begin
+        client.put_file(destination, file.read)
+        messages << "File #{file.original_filename} uploaded to Dropbox!"
+      rescue
+        messages << "Unable to upload #{file.original_filename} to Dropbox"
+      end
 
-    redirect_to public_inbox_path(slug), notice: message
+    end
+    redirect_to public_inbox_path(slug), notice: messages.join("<br>")
   end
 end
 
