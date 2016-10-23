@@ -1,23 +1,24 @@
-<p>
-  <strong>Inbox Name:</strong>
-  <%= @inbox.name %>
-</p>
-
-<p>
-  <strong>Remote Folder Name:</strong>
-  <%= @inbox.remote_folder %>
-</p>
-
-<p>
-  <strong>Service:</strong>
-  <%= @inbox.service.capitalize %>
-</p>
-
-<p>
-  <strong>Public URL:</strong>
-  <% path = public_inbox_url(@inbox.slug) %>
-  <%= link_to path, path %>
-</p>
+<div id="inbox-show">
+  <table>
+    <tr>
+      <th>Inbox Folder Name:</th>
+      <th><%= @inbox.name %></th>
+    </tr>
+    <tr>
+      <th>Remote Folder Name:</th>
+      <th><%= @inbox.remote_folder %></th>
+    </tr>
+    <tr>
+      <th>Service:</th>
+      <th><%= @inbox.service.capitalize %></th>
+    </tr>
+    <tr>
+      <th>Public URL:</th>
+      <th><% path = public_inbox_url(@inbox.slug) %>
+      <%= link_to path, path %></th>
+    </tr>
+  </table>
+</div>
 
 <%= link_to 'Edit', edit_inbox_path(@inbox) %> |
 <%= link_to 'Back', inboxes_path %>
