@@ -20,7 +20,13 @@
       return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
     }();
 
-  var $form = $('.box');
+  var $form     = $('.box');
+  var $input    = $form.find('input[type="file"]'),
+      $label    = $form.find('label'),
+      droppedFiles = false,
+      showFiles = function(files) {
+        $label.text(files.length > 1 ? ($input.attr('data-multiple-caption') || '').replace( '{count}', files.length ) : files[ 0 ].name);
+    };
 
   if (isAdvancedUpload) {
     $form.addClass('has-advanced-upload');
@@ -35,22 +41,19 @@
     .on('dragleave dragend drop', function() {
       $form.removeClass('is-dragover');
     })
-    .on('drop', function(e) {
-      droppedFiles = e.originalEvent.dataTransfer.files;
-    })
+//    .on('drop', function(e) {
+//      droppedFiles = e.originalEvent.dataTransfer.files;
+//    })
     .on('drop', function(e) { // when drag & drop is supported
       droppedFiles = e.originalEvent.dataTransfer.files;
+      showFiles( droppedFiles );
       $form.trigger('submit');
+      
     });
-
-    // ...
 
     $input.on('change', function(e) { // when drag & drop is NOT supported
       $form.trigger('submit');
     });
-
-
-
 
   }
 
@@ -61,6 +64,8 @@
 
     if (isAdvancedUpload) {
       // ajax for modern browsers
+      e.preventDefault();
+      
       var ajaxData = new FormData($form.get(0));
 
       if (droppedFiles) {
@@ -86,27 +91,27 @@
         },
         error: function() {
           // Log the error, show an alert, whatever works for you
+//          alert( 'Error. Please, contact the webmaster!' );
         }
       });
 
     } else {
       // ajax for legacy browsers
-
       var iframeName  = 'uploadiframe' + new Date().getTime();
-      $iframe   = $('<iframe name="' + iframeName + '" style="display: none;"></iframe>');
+          $iframe     = $('<iframe name="' + iframeName + '" style="display: none;"></iframe>');
 
       $('body').append($iframe);
       $form.attr('target', iframeName);
 
       $iframe.one('load', function() {
-        var data = JSON.parse($iframe.contents().find('body' ).text());
+        var data = $.parseJSON($iframe.contents().find('body' ).text());
         $form
           .removeClass('is-uploading')
           .addClass(data.success == true ? 'is-success' : 'is-error')
           .removeAttr('target');
         if (!data.success) $errorMsg.text(data.error);
-        $form.removeAttr('target');
-        $iframe.remove();
+          $form.removeAttr('target');
+          $iframe.remove();
       });
     }
   });
