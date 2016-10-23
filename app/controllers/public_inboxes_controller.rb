@@ -3,6 +3,10 @@ class PublicInboxesController < ApplicationController
   def show
     slug = params[:slug]
     @inbox = Inbox.where(slug: slug).first
+
+    if Time.now >= @inbox.expire
+      redirect_to root_url, notice: "Inbox has expired or is invalid."
+    end
   end
 
   def create
