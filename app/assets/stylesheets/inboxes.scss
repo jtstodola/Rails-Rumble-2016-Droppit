@@ -1,3 +1,62 @@
 // Place all the styles related to the inboxes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/*
+ *= require font-awesome
+ */
+
+.box__dragndrop,
+.box__uploading,
+.box__success,
+.box__error {
+  display: none;
+}
+
+.box.has-advanced-upload {
+  .box__file, .box__button {
+    display: none;
+  }
+}
+
+.box.has-advanced-upload {
+  padding-top: 30px;
+  background-color: white;
+  outline: 2px dashed black;
+  outline-offset: -10px;
+  height: 200px;
+  width: 400px;
+}
+.box.has-advanced-upload .box__dragndrop {
+  display: inline;
+}
+
+.box.has-advanced-upload {
+  position: relative;
+}
+
+.box__input {
+  label {
+    position: absolute;
+    color: rgba(0, 0, 0, 0.6);
+    left: 24%;
+    bottom: 35px;
+  }
+}
+
+.box.is-dragover {
+  background-color: grey;
+}
+
+.fa {
+  color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  right: 45%;
+  top: 40%;
+}
+
+.box.is-uploading .box__input {
+  visibility: none;
+}
+.box.is-uploading .box__uploading {
+  display: block;
+}
