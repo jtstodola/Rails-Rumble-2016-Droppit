@@ -4,7 +4,7 @@ class PublicInboxesController < ApplicationController
     slug = params[:slug]
     @inbox = Inbox.where(slug: slug).first
 
-    if Time.now >= @inbox.expire
+    if @inbox.expire.present? && Time.now >= @inbox.expire
       redirect_to root_url, notice: "Inbox has expired or is invalid."
     end
   end
