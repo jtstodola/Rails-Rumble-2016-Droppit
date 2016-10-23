@@ -31,6 +31,7 @@ gem 'omniauth-dropbox-oauth2'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
+gem "dropbox-sdk"
 gem 'rails_12factor', group: :production
 gem 'puma', group: :production
 
