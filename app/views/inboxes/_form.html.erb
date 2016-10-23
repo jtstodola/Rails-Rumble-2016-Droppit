@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :expire %><br>
-    <%= f.datetime_select :expire %>
+    <%= f.datetime_select :expire, {:include_blank => true, :default => nil} %>
   </div>
   <div class="actions">
     <%= f.submit %>
