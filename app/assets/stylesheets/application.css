@@ -13,10 +13,3 @@
  *= require_tree .
  *= require_self
  */
-.cur_user {
-	text-align: left;
-}
-
-footer {
-	text-align: center;
-}
