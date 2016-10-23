@@ -21,6 +21,11 @@
     }();
 
   var $form = $('.box');
+  var $input    = $form.find('input[type="file"]'),
+      $label    = $form.find('label'),
+      showFiles = function(files) {
+        $label.text(files.length > 1 ? ($input.attr('data-multiple-caption') || '').replace( '{count}', files.length ) : files[ 0 ].name);
+    };
 
   if (isAdvancedUpload) {
     $form.addClass('has-advanced-upload');
@@ -42,8 +47,6 @@
       droppedFiles = e.originalEvent.dataTransfer.files;
       $form.trigger('submit');
     });
-
-    // ...
 
     $input.on('change', function(e) { // when drag & drop is NOT supported
       $form.trigger('submit');
