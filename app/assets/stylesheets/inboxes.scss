@@ -64,3 +64,24 @@
 .box.is-uploading .box__uploading {
   display: block;
 }
+
+.box.is-uploading .box__input,
+.box.is-success .box__input,
+.box.is-error .box__input
+{
+    visibility: hidden;
+}
+
+.box.is-uploading .box__uploading,
+.box.is-success .box__success,
+.box.is-error .box__error
+{
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+
+    -webkit-transform: translateY( -50% );
+    transform: translateY( -50% );
+}
