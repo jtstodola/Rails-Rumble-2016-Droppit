@@ -1,12 +1,47 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$our_blue: #b5deff;
 ul li {
 	list-style: none;
 	text-align: center;
 }
 
-body {
+body.home_index {
   background-image: image-url("water-drop-large.jpeg");
   background-size: cover;
 }
+
+body>header {
+  padding: 1em;
+  background-color: $our_blue;
+}
+
+nav {
+  background-color: darken($our_blue, 10%);
+  position: relative;
+  width: 100%;
+
+  a { color: white; text-decoration: none; }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 1em;
+    margin-left: 1em;
+  }
+
+  .account {
+    display: block;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25%;
+
+  }
