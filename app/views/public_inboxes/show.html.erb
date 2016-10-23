@@ -20,7 +20,7 @@
       return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
     }();
 
-  var $form = $('.box');
+  var $form     = $('.box');
   var $input    = $form.find('input[type="file"]'),
       $label    = $form.find('label'),
       showFiles = function(files) {
