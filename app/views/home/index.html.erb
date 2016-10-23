@@ -1,9 +1,3 @@
 <body>
-	<% if user_signed_in? %>
-		<p>View your <a href="<%= :inboxes %>">Inboxes</a></p>
-	<% else %>
-		<p>Please authenticate to <a href="/users/auth/dropbox_oauth2">Dropbox</a> to view your inboxes</p>
-	<% end %>
-
 	<p>Droppit will provide a URL for you to share with others so they can upload files to your Dropbox folder for you.</p>
 </body>
