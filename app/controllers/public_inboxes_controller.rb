@@ -29,7 +29,11 @@ class PublicInboxesController < ApplicationController
       end
 
     end
-    redirect_to public_inbox_path(slug), notice: messages.join("<br>")
+    if request.xhr?
+      render text: messages
+    else
+      redirect_to public_inbox_path(slug), notice: messages.join("<br>")
+    end
   end
 end
 
