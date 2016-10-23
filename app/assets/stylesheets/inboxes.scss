@@ -4,7 +4,7 @@
 /*
  *= require font-awesome
  */
-header {
+body>header {
   background-image: image-url("water-drop-small.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -67,7 +67,7 @@ p {
     left: 27%;
     bottom: 35px;
     width: 65%;
-    
+
     strong:hover {
       font-size: 1.1em;
       color: white;
@@ -115,27 +115,28 @@ p {
 
 table {
   border-spacing: 0;
-  
+
   thead {
-    
+
     tr {
       th {
         border-bottom: 1px solid rgba(0, 0, 0, 0.4);
         padding: 5px 20px;
         margin: 0;
       }
-      
+
     }
   }
 
   tbody {
     tr {
-      
+
       td {
         border: none;
         margin: 0;
         padding: 10px;
-      } 
+      }
+
     }
   }
 }
@@ -147,17 +148,17 @@ tbody > tr:hover {
 div#inbox-show {
   padding: 15px;
   font-size: 16px;
-  
+
   tr:hover {
     background-color: inherit;
   }
-  
+
   th {
     text-align: left;
     font-weight: 200;
     padding: 5px 10px;
   }
-  
+
   th:first-child {
     text-align: right;
     font-weight: 600;
