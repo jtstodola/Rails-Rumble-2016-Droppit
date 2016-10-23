@@ -69,6 +69,6 @@ class InboxesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inbox_params
-      params.require(:inbox).permit(:name, :remote_folder, :service)
+      params.require(:inbox).permit(:name, :remote_folder, :service, :expire)
     end
 end

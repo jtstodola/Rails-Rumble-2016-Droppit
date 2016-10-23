@@ -23,6 +23,10 @@
     <%= f.label :service %><br>
     <%= f.select :service, [["Dropbox", "dropbox" ]] %>
   </div>
+  <div class="field">
+    <%= f.label :expire %><br>
+    <%= f.datetime_select :expire %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
