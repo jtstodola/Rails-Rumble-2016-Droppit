@@ -246,6 +246,9 @@ Devise.setup do |config|
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
+  #config.omniauth :dropbox, ENV['DROPBOX_KEY'], ENV['DROPBOX_SECRET'], :require => "omniauth-dropbox"
+  config.omniauth :dropbox_oauth2, ENV['DROPBOX_KEY'], ENV['DROPBOX_SECRET'], :require => "omniauth-dropbox-oauth2"
+  
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
