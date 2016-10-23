@@ -1,4 +1,5 @@
 class InboxesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_inbox, only: [:show, :edit, :update, :destroy]
 
   # GET /inboxes
