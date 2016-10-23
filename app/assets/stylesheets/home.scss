@@ -12,9 +12,9 @@ body.home_index {
   background-size: cover;
 }
 
-body>header {
+body.home_index>header {
   padding: 1em;
-  background-color: $our_blue;
+  background-image: none;
 }
 
 nav {
@@ -43,5 +43,5 @@ nav {
     right: 0;
     top: 0;
     width: 25%;
-
   }
+}
