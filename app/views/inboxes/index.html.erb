@@ -1,5 +1,7 @@
 <h1>Listing Inboxes</h1>
 
+<%= button_to 'New Inbox', new_inbox_path, method: :get, class: :inbox_btn %>
+
 <table>
   <thead>
     <tr>
@@ -28,7 +30,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Inbox', new_inbox_path %>
