@@ -4,7 +4,7 @@ class InboxesController < ApplicationController
   # GET /inboxes
   # GET /inboxes.json
   def index
-    @inboxes = Inbox.all
+    @inboxes = current_user.inboxes
   end
 
   # GET /inboxes/1
@@ -24,7 +24,7 @@ class InboxesController < ApplicationController
   # POST /inboxes
   # POST /inboxes.json
   def create
-    @inbox = Inbox.new(inbox_params)
+    @inbox = current_user.inboxes.build(inbox_params)
 
     respond_to do |format|
       if @inbox.save
@@ -64,7 +64,7 @@ class InboxesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_inbox
-      @inbox = Inbox.find(params[:id])
+      @inbox = current_user.inboxes.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

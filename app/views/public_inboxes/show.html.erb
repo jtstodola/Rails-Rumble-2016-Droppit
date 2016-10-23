@@ -1,0 +1,6 @@
+<form method="post" action="/u/<%=@inbox.slug %>" enctype="multipart/form-data">
+
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input type="file" name="file">
+  <input type="submit">
+</form>
