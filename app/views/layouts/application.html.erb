@@ -6,11 +6,21 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
 
-<%= yield %>
+<body>
+	<header>
+		<h1>Droppit</h1>
+	</header>
+  <p class="notice"><%= notice %></p>
+ 	<p class="alert"><%= alert %></p>
+
+	<main>
+		<%= yield %>
+	</main>
+
+	<footer>
+		&copy;2016 <a href="https://twitter.com/bphogan">@bphogan</a>, <a href="https://twitter.com/JessicaTStodola">@JessicaTStodola</a>, & <a href="https://twitter.com/Alex_Henry21">@Alex_Henry21</a>
+	</footer>
 
 </body>
 </html>
