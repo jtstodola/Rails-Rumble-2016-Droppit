@@ -16,7 +16,7 @@
       <tr>
         <td><%= inbox.name %></td>
         <td><%= inbox.remote_folder %></td>
-        <td><%= inbox.service %></td>
+        <td><%= inbox.service.capitalize %></td>
         <td>
           <% path = public_inbox_url(inbox.slug) %>
           <%= link_to path, path %>
