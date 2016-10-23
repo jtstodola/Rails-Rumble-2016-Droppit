@@ -18,7 +18,6 @@ body.home_index {
 }
 
 body.home_index>header {
-  padding: 1em;
   background-image: none;
 }
 
@@ -47,7 +46,20 @@ nav {
     position: absolute;
     right: 0;
     top: 0;
-    width: 25%;
+    width: 50%;
+  }
+}
+
+.infobox {
+  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+
+@media screen and (min-width: 960px) {
+  .container {
+    width: 80%;
+
   }
 }
 
