@@ -4,6 +4,17 @@
 /*
  *= require font-awesome
  */
+header {
+  background-image: image-url("water-drop-small.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+body {
+  background-image: none;
+}
+
 
 $our_blue: #b5deff;
 
